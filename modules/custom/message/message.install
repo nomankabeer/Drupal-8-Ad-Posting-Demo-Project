@@ -1,0 +1,76 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function message_schema() {
+  $schema['message'] = array(
+    'description' => 'Stores email, timestamp, nid and uid for an message',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The {users}.uid that added this message.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'nid' => array(
+        'description' => 'The {node} .nid for this message.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => 0,
+      ),
+      'name' => array(
+        'description' => 'user name',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'mail' => array(
+        'description' => 'User\'s email address.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'message' => array(
+        'description' => 'User\'s message.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp for when message was created.',
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'node' => array('nid'),
+      'node_user' => array('nid', 'uid'),
+    ),
+  );
+//  $schema['messages_enabled'] = array(
+//     'description' => 'Tracks whether messages is enabled for a node.',
+//     'fields' => array(
+//       'nid' => array(
+//         'description' => 'The {node}.nid that has messages enabled.',
+//         'type' => 'int',
+//         'not null' => TRUE,
+//         'default' => 0,
+//       ),
+//     ),
+//     'primary key' => array('nid'),
+//   );
+  return $schema;
+}

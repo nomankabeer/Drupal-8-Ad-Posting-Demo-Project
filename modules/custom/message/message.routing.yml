@@ -1,0 +1,16 @@
+message.form:
+  path: '/message'
+  defaults:
+    _form: '\Drupal\message\Form\MessageForm'
+    _title: 'Message to this Event'
+  requirements:
+    # _permission: 'access content'
+    _permission: 'view message'
+
+message.report:
+  path: '/contact/messages'
+  defaults:
+    _controller:  '\Drupal\message\Controller\ReportController::report'
+    _title: 'List of Messages'
+  requirements:
+    _permission:  'access message report'

@@ -1,0 +1,6 @@
+view message:
+  title: 'View message Form'
+  description: 'View and submit the message form'
+access message report:
+  title: 'access list of messages'
+  description: 'View the report listing all messages submitted.'

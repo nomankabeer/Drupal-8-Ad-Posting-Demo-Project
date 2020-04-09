@@ -1,0 +1,59 @@
+<?php
+/**
+ * @file
+ * message Module hooks.
+ */
+use Drupal\Core\Form\FormStateInterface;
+/**
+* Implements hook_form_alter().
+ *
+* Alter the node add/edit form to include admin setting for displaying messageBlock with content
+*//*
+function message_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+  $current_node_type = $node->getType();
+  $config = \Drupal::config('message.settings');
+  $types = $config->get('allowed_types', array());
+// message Options for administrators
+  if (in_array($current_node_type, $types)){
+  $form['message'] = array(
+    '#type' => 'details',
+    '#title' => t('message Collection'),
+    '#access' => \Drupal::currentUser()->hasPermission('administer message'),
+    '#group' => 'advanced',
+    '#weight' => 100,
+  );
+   
+    $enabler = \Drupal::service('message.enabler');
+  $form['message']['message_enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Collect message e-mail addresses for this node.'),
+    '#default_value' => $enabler->isEnabled($node),
+  );
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]
+    ['#type'] === 'submit') {
+    $form['actions'][$action]['#submit'][] = 'message_form_node_form_submit';
+    }
+  }
+  }
+}*/
+/**
+ * Form submission handler for message item field on the node form.
+ *
+ * @see message_form_node_form_alter()
+ *
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function message_form_node_form_submit(array $form, FormStateInterface $form_state) {
+  /** @var \Drupal\message\EnablerService $enabler */
+  $enabler = \Drupal::service('message.enabler');
+  $node = $form_state->getFormObject()->getEntity();
+  if ($enabled = $form_state->getValue('message_enabled')) {
+    $enabler->setEnabled($node);
+  }
+  else {
+    $enabler->delEnabled($node);
+  }
+}

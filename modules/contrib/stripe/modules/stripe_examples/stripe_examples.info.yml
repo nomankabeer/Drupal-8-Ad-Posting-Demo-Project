@@ -1,0 +1,13 @@
+name: Stripe examples
+type: module
+description: Stripe examples
+# core: 8.x
+package: Stripe
+dependencies:
+  - stripe
+
+# Information added by Drupal.org packaging script on 2018-02-27
+version: '8.x-1.0-beta2'
+core: '8.x'
+project: 'stripe'
+datestamp: 1519736887
