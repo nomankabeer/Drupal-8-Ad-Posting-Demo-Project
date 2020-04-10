@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a611cdf2-56b0-40f1-82cb-f8f7876536b4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/custom/message/message.info.yml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/custom/message/message.info.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/custom/message/message.links.menu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/custom/message/message.links.menu.yml" afterDir="false" />
-    </list>
+    <list default="true" id="a611cdf2-56b0-40f1-82cb-f8f7876536b4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +137,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -212,16 +209,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586502455748</updated>
-      <workItem from="1586502463217" duration="2389000" />
+      <workItem from="1586502463217" duration="2393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2389000" />
+    <option name="totallyTimeSpent" value="2393000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
