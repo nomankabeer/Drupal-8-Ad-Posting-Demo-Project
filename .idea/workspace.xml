@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a611cdf2-56b0-40f1-82cb-f8f7876536b4" name="Default" comment="" />
+    <list default="true" id="a611cdf2-56b0-40f1-82cb-f8f7876536b4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/libraries/flexslider" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +37,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message.links.menu.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="message.links.menu.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/custom/message/message.links.menu.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -56,6 +63,7 @@
       <list>
         <option value="$PROJECT_DIR$/modules/custom/message/message.info.yml" />
         <option value="$PROJECT_DIR$/modules/custom/message/message.links.menu.yml" />
+        <option value="$PROJECT_DIR$/libraries/flexslider/changelog.txt" />
       </list>
     </option>
   </component>
@@ -73,7 +81,6 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/core/assets/vendor/jquery.ui/package.json" />
       <path value="$PROJECT_DIR$/core/package.json" />
-      <path value="$PROJECT_DIR$/libraries/flexslider/node_modules/jquery/package.json" />
       <path value="$PROJECT_DIR$/libraries/flexslider/package.json" />
       <path value="$PROJECT_DIR$/sites/all/libraries/flexslider/node_modules/jquery/package.json" />
       <path value="$PROJECT_DIR$/sites/all/libraries/flexslider/package.json" />
@@ -161,6 +168,12 @@
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="flexslider" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -196,15 +209,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586502455748</updated>
-      <workItem from="1586502463217" duration="3104000" />
+      <workItem from="1586502463217" duration="3349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3104000" />
+    <option name="totallyTimeSpent" value="3349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -258,7 +272,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/flexslider/changelog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/custom/message/message.links.menu.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
