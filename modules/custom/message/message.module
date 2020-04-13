@@ -46,14 +46,15 @@ function message_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  * @param array $form
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  */
-function message_form_node_form_submit(array $form, FormStateInterface $form_state) {
-  /** @var \Drupal\message\EnablerService $enabler */
-  $enabler = \Drupal::service('message.enabler');
-  $node = $form_state->getFormObject()->getEntity();
-  if ($enabled = $form_state->getValue('message_enabled')) {
-    $enabler->setEnabled($node);
-  }
-  else {
-    $enabler->delEnabled($node);
-  }
-}
+
+// function message_form_node_form_submit(array $form, FormStateInterface $form_state) {
+//   /** @var \Drupal\message\EnablerService $enabler */
+//   $enabler = \Drupal::service('message.enabler');
+//   $node = $form_state->getFormObject()->getEntity();
+//   if ($enabled = $form_state->getValue('message_enabled')) {
+//     $enabler->setEnabled($node);
+//   }
+//   else {
+//     $enabler->delEnabled($node);
+//   }
+// }

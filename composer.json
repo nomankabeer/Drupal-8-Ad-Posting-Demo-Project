@@ -28,15 +28,17 @@
           }
     ],
     "require": {
-        "woothemes/flexslider": "~2.0",
         "composer/installers": "^1.2",
         "drupal/block_user_info": "^2.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
+        "drupal/features": "^3.8",
         "drupal/flexslider": "^2.0@beta",
-        "drupal/libraries": "^3.0@alpha"
+        "drupal/libraries": "^3.0@alpha",
+        "drupal/override_node_options": "^2.4",
+        "woothemes/flexslider": "~2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
