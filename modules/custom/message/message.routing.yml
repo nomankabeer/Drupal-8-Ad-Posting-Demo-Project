@@ -7,6 +7,14 @@ message.form:
     # _permission: 'access content'
     _permission: 'view message'
 
+message.admin_settings:
+  path: '/admin/config/content/message'
+  defaults:
+    _form:  '\Drupal\message\Form\MessageSettingsForm'
+    _title: 'Message List Settings'
+  requirements:
+    _permission:  'adminster message'
+
 message.report:
   path: '/contact/messages'
   defaults:

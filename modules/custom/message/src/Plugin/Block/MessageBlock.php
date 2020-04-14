@@ -27,17 +27,17 @@ class MessageBlock extends BlockBase {
       // ];
       return \Drupal::formBuilder()->getForm('Drupal\message\Form\messageForm');
     }
-    // public function blockAccess(AccountInterface $account){
-    //   /** 
-    //    * @var \Drupal\node\Entity\Node $node
-    //    * permission
-    //   */
-    //   $node = \Drupal::routeMatch()->getParameter('node');
-    //   $nid = 1;//$node->id->value;
-    //   if(is_numeric($nid)){
-    //     return AccessResult::allowedIfHasPermission($account , 'view message');
-    //   }
-    //   return AccessResult::forbidden();
-    // }
+    public function blockAccess(AccountInterface $account){
+      /** 
+       * @var \Drupal\node\Entity\Node $node
+       * permission
+      */
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $nid = 1;//$node->id->value;
+      if(is_numeric($nid)){
+        return AccessResult::allowedIfHasPermission($account , 'view message');
+      }
+      return AccessResult::forbidden();
+    }
 }
 ?>

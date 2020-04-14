@@ -1,0 +1,21 @@
+<p>Message</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Message</th>
+      <th scope="col">View Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in rows %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.message}}</td>
+            <td><a href="{{i.detail}}" class="btn btn-primary" target='_blank'  >View Detail</a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
