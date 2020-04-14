@@ -24,11 +24,12 @@ class MessageListBlock extends BlockBase {
     protected $id;
     private function loadMessages() {
         $node = \Drupal::routeMatch()->getParameter('node');
-        if($node == null){
-            return null;
+        if($node == null)
+        {
+          return null;
         }
         $database = \Drupal::database();
-        $query = $database->query("SELECT * FROM {message} WHERE nid = ".@$node->id());
+        $query = $database->query("SELECT * FROM {message} WHERE nid = ".$node->id());
         $rows = array();
         foreach ($query->fetchAll() as $entry) {
             $rows[] = array(

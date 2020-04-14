@@ -42,8 +42,8 @@ function message_schema() {
       ),
       'message' => array(
         'description' => 'User\'s message.',
-        'type' => 'varchar',
-        'length' => 255,
+        'type' => 'text',
+        'length' => 5000,
         'not null' => FALSE,
         'default' => '',
       ),

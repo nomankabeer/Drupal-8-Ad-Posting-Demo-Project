@@ -4,6 +4,5 @@ package: message
 type: module
 version: 1.0
 core: 8.x
-configure: message.admin_settings
 dependencies:
   - block

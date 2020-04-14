@@ -7,7 +7,7 @@ namespace Drupal\message\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Database;
-
+use Drupal\node\Entity\Node;
 /**
  * Controller for message List Report
 */
@@ -44,7 +44,8 @@ class ReportController extends ControllerBase {
         $rows[] = array(
             'name' => $entry->name,
             'email' => $entry->mail,
-            'message' => $entry->message
+            'message' => substr($entry->message , 0 , 20)."...",
+            'detail' => 'message/detail/'.$entry->nid
         );
       }
     return $rows;
@@ -57,33 +58,72 @@ class ReportController extends ControllerBase {
    *  Render array for report output.
    */
   public function report() {
-    $content = array();
-    $content['message'] = array(
-      '#markup' => $this->t('Below are the contact messages sended by users.'),
-    );
-    $headers = array(
-      t('Name'),
-      t('Email'),
-      t('Message'),
-    );
-    $rows = array();
-    $entries = $this->load();
-    if($entries != null){
-      foreach ( $entries as $entry) {
-        // Sanitize each entry.
-        $rows[] = array_map('Drupal\Component\Utility\SafeMarkup::checkPlain', $entry);
-      }
-    }
     
-    $content['table'] = array(
-      '#type' => 'table',
-      '#header' => $headers,
-      '#rows' => $rows,
-      '#empty' => t('No entries available.'),
-    );
-    // Don't cache this page.
-    $content['#cache']['max-age'] = 0;
-    return $content;
+   $entries = $this->load();
+    //  var_dump($entries);
+    return [
+      '#cache' => array('max-age' => 0) ,
+      '#theme' => 'message_list',
+      '#rows' => $entries,
+    ];
+
+
+    // $content = array();
+    // $content['message'] = array(
+    //   '#markup' => $this->t('Below are the contact messages sended by users.'),
+    // );
+    // $headers = array(
+    //   t('Name'),
+    //   t('Email'),
+    //   t('Message'),
+    // );
+    // $rows = array();
+    // $entries = $this->load();
+    // if($entries != null){
+    //   foreach ( $entries as $entry) {
+    //     // Sanitize each entry.
+    //     $rows[] = array_map('Drupal\Component\Utility\SafeMarkup::checkPlain', $entry);
+    //   }
+    // }
+    
+    // $content['table'] = array(
+    //   '#type' => 'table',
+    //   '#header' => $headers,
+    //   '#rows' => $rows,
+    //   '#empty' => t('No entries available.'),
+    // );
+    // // Don't cache this page.
+    // $content['#cache']['max-age'] = 0;
+    // return $content;
+  }
+
+  public function messageDetail(Node $node){
+
+    $nid = $node->get('nid')->getString();
+    $nuid = $node->get('uid')->getString();
+    $uid = \Drupal::currentUser()->id();
+$data = null;
+    if($nuid == $uid){
+      
+      $database = \Drupal::database();
+      $query = $database->select('message', 'm');
+      // $query->condition('m.uid', $uid);
+      $query->condition('m.nid', $nid);
+      $query->fields('m', ['name']);
+      $query->fields('m', ['mail']);
+      $query->fields('m', ['message']);
+      $result = $query->execute()->fetch();
+
+$data['name'] = $result->name;
+$data['mail'] = $result->mail;
+$data['message'] = $result->message;
+    }
+// $data = null;
+    return [
+      '#cache' => array('max-age' => 0) ,
+      '#theme' => 'message_detail',
+      '#rows' => $data,
+    ];
   }
 
 }

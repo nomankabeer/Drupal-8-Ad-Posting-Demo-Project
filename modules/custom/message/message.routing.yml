@@ -7,14 +7,6 @@ message.form:
     # _permission: 'access content'
     _permission: 'view message'
 
-message.admin_settings:
-  path: '/admin/config/content/message'
-  defaults:
-    _form:  '\Drupal\message\Form\MessageSettingsForm'
-    _title: 'Message List Settings'
-  requirements:
-    _permission:  'adminster message'
-
 message.report:
   path: '/contact/messages'
   defaults:
@@ -22,3 +14,27 @@ message.report:
     _title: 'List of Messages'
   requirements:
     _permission:  'access message report'
+
+message.dreport:
+  path: "/contact/message/detail/{node}"
+  defaults:
+    _controller:  '\Drupal\message\Controller\ReportController::messageDetail'
+    _title: 'Message Detail'
+  requirements:
+    _permission:  'access message report'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+# message.report.detail:
+#   path: "/contact/message/detail/{node}"
+#   defaults:
+#     _controller: '\Drupal\message\Controller\ReportController::messageDetail'
+#     _title: 'Message Detail'
+#   requirements:
+#     _permission: 'access message report'
+#   options:
+#     parameters:
+#       node:
+#         type: entity:node

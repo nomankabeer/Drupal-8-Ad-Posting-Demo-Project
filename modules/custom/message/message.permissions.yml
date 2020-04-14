@@ -4,7 +4,3 @@ view message:
 access message report:
   title: 'access list of messages'
   description: 'View the report listing all messages submitted.'
-administer message:
-  title: 'Administer message Settings'
-  description: 'Access the message administrative settings page.'
-  restrict access: true
