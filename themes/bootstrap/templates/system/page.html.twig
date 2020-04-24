@@ -144,6 +144,13 @@
         {% block content %}
           <a id="main-content"></a>
           {{ page.search_box }}
+
+
+
+
+
+
+
           {{ page.content }}
         {% endblock %}
       </section>
@@ -163,7 +170,8 @@
 {% if page.footer %}
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
-      {{ page.footer }}
+      {#{{ page.footer }}#}
+        {% include '@bootstrap/includes/footer.html.twig' %}
     </footer>
   {% endblock %}
 {% endif %}
