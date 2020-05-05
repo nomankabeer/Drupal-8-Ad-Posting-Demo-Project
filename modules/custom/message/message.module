@@ -69,3 +69,11 @@ function message_theme($existing, $type, $theme, $path) {
       ]
       ];
 }
+
+function message_help($path, $arg) {
+    switch ($path) {
+        case "user.login":
+            return '' . t("This text comes from hook for user login page") . '';
+            break;
+    }
+}

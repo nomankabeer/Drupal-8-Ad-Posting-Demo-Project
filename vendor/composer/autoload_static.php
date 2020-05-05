@@ -101,6 +101,8 @@ class ComposerStaticInitce58b5d98b41b71861b22b5cdcf13ed1
         array (
             'Composer\\Semver\\' => 16,
             'Composer\\Installers\\' => 20,
+            'CommerceGuys\\Intl\\' => 18,
+            'CommerceGuys\\Addressing\\' => 24,
         ),
         'A' => 
         array (
@@ -300,6 +302,14 @@ class ComposerStaticInitce58b5d98b41b71861b22b5cdcf13ed1
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+        ),
+        'CommerceGuys\\Intl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/commerceguys/intl/src',
+        ),
+        'CommerceGuys\\Addressing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/commerceguys/addressing/src',
         ),
         'Asm89\\Stack\\' => 
         array (
